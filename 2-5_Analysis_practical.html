@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -533,8 +533,13 @@ Important
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>R_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"~/R_data2.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'readr' was built under R version 4.3.3</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>R_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"~/R_data2.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Question 1</a></li></ul>
@@ -591,13 +596,13 @@ Important
 <div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
 <p>In the previous practical we made a Table 1 of baseline characteristics between cases and controls (<code>Intellectual disability</code> and <code>Normal brain development</code>). Test per variable whether the groups are significantly different.</p>
 <div style="font-size: 75%;">
-<table class="caption-top table">
+<table class="table">
 <colgroup>
-<col style="width: 26%">
-<col style="width: 18%">
-<col style="width: 22%">
-<col style="width: 23%">
-<col style="width: 8%">
+<col style="width: 20%">
+<col style="width: 19%">
+<col style="width: 24%">
+<col style="width: 25%">
+<col style="width: 10%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -821,21 +826,21 @@ Important
 <li><p><code>Status</code> and <code>smoking</code> should be factors for this analysis. Check if this is the case, otherwise use the following code to make factors of these variables:</p></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>R_data<span class="sc">$</span>Status <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(R_data<span class="sc">$</span>Status)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>R_data<span class="sc">$</span>smoking <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(R_data<span class="sc">$</span>smoking)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>R_data<span class="sc">$</span>Status <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(R_data<span class="sc">$</span>Status)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>R_data<span class="sc">$</span>smoking <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(R_data<span class="sc">$</span>smoking)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If we run the model on the data as it is now, R will consider “normal brain development” as the event because it is second in the levels of Status:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(R_data<span class="sc">$</span>Status)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(R_data<span class="sc">$</span>Status)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "intellectual disability"  "normal brain development"</code></pre>
 </div>
 </div>
 <p>So we need to first change these factor levels so we treat “intellectual disability” as the event and “normal brain development” as the baseline. Run the following to change the levels</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>R_data<span class="sc">$</span>StatusNew <span class="ot">&lt;-</span> <span class="fu">factor</span>(R_data<span class="sc">$</span>Status, </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                           <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"normal brain development"</span>, <span class="st">"intellectual disability"</span>))</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(R_data<span class="sc">$</span>StatusNew)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>R_data<span class="sc">$</span>StatusNew <span class="ot">&lt;-</span> <span class="fu">factor</span>(R_data<span class="sc">$</span>Status, </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                           <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"normal brain development"</span>, <span class="st">"intellectual disability"</span>))</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">levels</span>(R_data<span class="sc">$</span>StatusNew)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "normal brain development" "intellectual disability" </code></pre>
 </div>

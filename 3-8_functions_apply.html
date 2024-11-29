@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -661,24 +661,24 @@ $col3
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>patients <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">"group"</span><span class="ot">=</span><span class="fu">paste</span>(<span class="st">'grp'</span>,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>),<span class="at">sep=</span><span class="st">'-'</span>), <span class="st">"outcome"</span><span class="ot">=</span><span class="fu">rnorm</span>(<span class="dv">12</span>))</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>patients</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   group     outcome
-1  grp-1  0.31311057
-2  grp-1 -0.64316974
-3  grp-1 -1.20626387
-4  grp-1 -0.03007493
-5  grp-1  0.08798553
-6  grp-1  1.10662788
-7  grp-2  0.60192099
-8  grp-2  0.99525874
-9  grp-2 -0.21587795
-10 grp-2  1.23605337
-11 grp-2  1.20726045
-12 grp-2 -0.16130256</code></pre>
+<pre><code>   group       outcome
+1  grp-1  0.2951589947
+2  grp-1 -0.2160625281
+3  grp-1 -0.9497639619
+4  grp-1  0.2737069362
+5  grp-1  0.7442887620
+6  grp-1 -0.4650574038
+7  grp-2  0.1547009804
+8  grp-2  1.5071720592
+9  grp-2 -0.0005555914
+10 grp-2  0.6872425766
+11 grp-2 -0.3367205133
+12 grp-2  0.3772219565</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(patients<span class="sc">$</span>outcome, patients<span class="sc">$</span>group, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      grp-1       grp-2 
--0.06196409  0.61055217 </code></pre>
+-0.05295487  0.39817691 </code></pre>
 </div>
 </div>
 <p>It is also possible to use multiple factors in a list to create groups, which returns a matrix.</p>
@@ -689,9 +689,9 @@ $col3
 <span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(patients<span class="sc">$</span>outcome, <span class="fu">list</span>(patients<span class="sc">$</span>group, patients<span class="sc">$</span>serotype), mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>               A           B
-grp-1 -0.3543938 -0.86342011
-grp-2 -0.8007841  0.06815861</code></pre>
+<pre><code>              A         B
+grp-1 0.3649697 0.1246118
+grp-2 0.1375897 0.7016932</code></pre>
 </div>
 </div>
 <p>These are some (trivial) examples of how you can use the apply family of functions to quickly apply a function to your data. It is possible to do the same thing by using for loops, but apply functions are generally faster to write and read. In some cases using apply to run your function can also increase the speed of your code. More on increasing the speed of your code will follow in later lectures.</p>
