@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<head>
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
 
-<meta charset="utf-8" />
-<meta name="generator" content="quarto-1.5.57" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Data Cleaning - Answers – Basic R Course</title>
@@ -58,7 +56,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-<!-- htmldependencies:E3FAD763 -->
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./2-4_Analysis.html" rel="next">
+<link href="./2-2_Datacleaning_practical.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -90,22 +108,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body>
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn"
-      data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" 
-      aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation"
-      onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <h1 class="quarto-secondary-nav-title no-breadcrumbs"></h1>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" role="link"
-        aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation"
-        onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2-1_Datacleaning.html">Data Cleaning</a></li><li class="breadcrumb-item"><a href="./2-3_Datacleaning_answers.html">Data Cleaning - Answers</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -119,12 +132,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="/">
-      Basic R Course
-      </a> 
+      <a href="./">Basic R Course</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/dnieuw/BasicRcourseEMC"  title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <a href="/Basic-R-Course.pdf"  title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <a href="https://github.com/dnieuw/BasicRcourseEMC" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="./Basic-R-Course.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
@@ -138,13 +149,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/index.html" class="sidebar-item-text sidebar-link">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="/1-1_Introduction.html" class="sidebar-item-text sidebar-link">
+            <a href="./1-1_Introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction and History</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -153,19 +164,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/1-2_Working_with_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class='chapter-number'>1</span>  <span class='chapter-title'>Importing and Saving Data</span></span></a>
+  <a href="./1-2_Working_with_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Importing and Saving Data</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/1-3_Working_with_R_practical.html" class="sidebar-item-text sidebar-link">
+  <a href="./1-3_Working_with_R_practical.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Working with R - Practical</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/1-4_Working_with_R_answers.html" class="sidebar-item-text sidebar-link">
+  <a href="./1-4_Working_with_R_answers.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Working with R - Answers</span></a>
   </div>
 </li>
@@ -173,7 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="/1-5_Common_Objects.html" class="sidebar-item-text sidebar-link">
+            <a href="./1-5_Common_Objects.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Common Objects</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -182,13 +193,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/1-6_Common_Objects_practical.html" class="sidebar-item-text sidebar-link">
+  <a href="./1-6_Common_Objects_practical.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Common Objects - Practical</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/1-7_Common_Objects_answers.html" class="sidebar-item-text sidebar-link">
+  <a href="./1-7_Common_Objects_answers.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Common Objects - Answers</span></a>
   </div>
 </li>
@@ -196,7 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="/1-8_Indexing_Subsetting.html" class="sidebar-item-text sidebar-link">
+            <a href="./1-8_Indexing_Subsetting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Indexing and Subsetting</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -205,13 +216,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/1-9_Indexing_Subsetting_practical.html" class="sidebar-item-text sidebar-link">
+  <a href="./1-9_Indexing_Subsetting_practical.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Indexing and Subsetting - Practical</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/1-10_Indexing_Subsetting_answers.html" class="sidebar-item-text sidebar-link">
+  <a href="./1-10_Indexing_Subsetting_answers.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Indexing and Subsetting - Answers</span></a>
   </div>
 </li>
@@ -219,7 +230,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="/2-1_Datacleaning.html" class="sidebar-item-text sidebar-link">
+            <a href="./2-1_Datacleaning.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Cleaning</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -228,13 +239,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/2-2_Datacleaning_practical.html" class="sidebar-item-text sidebar-link">
+  <a href="./2-2_Datacleaning_practical.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Cleaning - Practical</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/2-3_Datacleaning_answers.html" class="sidebar-item-text sidebar-link active">
+  <a href="./2-3_Datacleaning_answers.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Data Cleaning - Answers</span></a>
   </div>
 </li>
@@ -242,7 +253,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="/2-4_Analysis.html" class="sidebar-item-text sidebar-link">
+            <a href="./2-4_Analysis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analysis</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -251,13 +262,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/2-5_Analysis_practical.html" class="sidebar-item-text sidebar-link">
+  <a href="./2-5_Analysis_practical.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analysis - Practical</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/2-6_Analysis_answers.html" class="sidebar-item-text sidebar-link">
+  <a href="./2-6_Analysis_answers.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Analysis - Answers</span></a>
   </div>
 </li>
@@ -265,7 +276,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="/2-7_basic_plotting_intro.html" class="sidebar-item-text sidebar-link">
+            <a href="./2-7_basic_plotting_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Basic plotting</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -274,7 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/2-8_basic_plotting.html" class="sidebar-item-text sidebar-link">
+  <a href="./2-8_basic_plotting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Basic plotting</span></a>
   </div>
 </li>
@@ -282,7 +293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="/2-9_basic_plotting_practicals_intro.html" class="sidebar-item-text sidebar-link">
+            <a href="./2-9_basic_plotting_practicals_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Basic Plotting: Practicals</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -291,13 +302,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/2-10_basic_plotting_practicals_questions.html" class="sidebar-item-text sidebar-link">
+  <a href="./2-10_basic_plotting_practicals_questions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Basic Plotting: Questions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/2-11_basic_plotting_practicals_answers.html" class="sidebar-item-text sidebar-link">
+  <a href="./2-11_basic_plotting_practicals_answers.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Basic Plotting: Answers</span></a>
   </div>
 </li>
@@ -305,7 +316,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="/2-12_ggplot2_intro.html" class="sidebar-item-text sidebar-link">
+            <a href="./2-12_ggplot2_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ggplot2</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -314,7 +325,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/2-13_ggplot2.html" class="sidebar-item-text sidebar-link">
+  <a href="./2-13_ggplot2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data visualization using ggplot2</span></a>
   </div>
 </li>
@@ -322,7 +333,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="/2-14_ggplot2_practicals_intro.html" class="sidebar-item-text sidebar-link">
+            <a href="./2-14_ggplot2_practicals_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ggplot2: Practicals</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -331,13 +342,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/2-15_ggplot2_practicals_questions.html" class="sidebar-item-text sidebar-link">
+  <a href="./2-15_ggplot2_practicals_questions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ggplot: Questions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/2-16_ggplot2_practicals_answers.html" class="sidebar-item-text sidebar-link">
+  <a href="./2-16_ggplot2_practicals_answers.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ggplot: Answers</span></a>
   </div>
 </li>
@@ -345,7 +356,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="/3-1_functions_intro.html" class="sidebar-item-text sidebar-link">
+            <a href="./3-1_functions_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Functions</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -354,43 +365,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/3-2_functions_examples.html" class="sidebar-item-text sidebar-link">
+  <a href="./3-2_functions_examples.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Example functions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/3-3_functions_arguments.html" class="sidebar-item-text sidebar-link">
+  <a href="./3-3_functions_arguments.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Function arguments</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/3-4_functions_custom.html" class="sidebar-item-text sidebar-link">
+  <a href="./3-4_functions_custom.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Creating your own functions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/3-5_functions_conditional.html" class="sidebar-item-text sidebar-link">
+  <a href="./3-5_functions_conditional.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Conditional execution using if and else</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/3-6_functions_terminating.html" class="sidebar-item-text sidebar-link">
+  <a href="./3-6_functions_terminating.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Terminating a function with returns, errors, and warnings</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/3-7_functions_looping.html" class="sidebar-item-text sidebar-link">
+  <a href="./3-7_functions_looping.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Looping</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/3-8_functions_apply.html" class="sidebar-item-text sidebar-link">
+  <a href="./3-8_functions_apply.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Using apply functions</span></a>
   </div>
 </li>
@@ -398,7 +409,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="/3-9_functions_practicals_intro.html" class="sidebar-item-text sidebar-link">
+            <a href="./3-9_functions_practicals_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Functions: Practicals</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -407,13 +418,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/3-10_functions_practicals_questions.html" class="sidebar-item-text sidebar-link">
+  <a href="./3-10_functions_practicals_questions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Functions: Questions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/3-11_functions_practicals_answers.html" class="sidebar-item-text sidebar-link">
+  <a href="./3-11_functions_practicals_answers.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Functions: Answers</span></a>
   </div>
 </li>
@@ -421,7 +432,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="/4-1_represearch.html" class="sidebar-item-text sidebar-link">
+            <a href="./4-1_represearch.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Reproducible research</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -430,31 +441,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/4-2_basic_markdown.html" class="sidebar-item-text sidebar-link">
+  <a href="./4-2_basic_markdown.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Basic Markdown</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/4-3_codeblocks.html" class="sidebar-item-text sidebar-link">
+  <a href="./4-3_codeblocks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Code Blocks</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/4-4_basic_markdown_practicals_questions.html" class="sidebar-item-text sidebar-link">
+  <a href="./4-4_basic_markdown_practicals_questions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Markdown: Questions</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/4-5_shiny.html" class="sidebar-item-text sidebar-link">
+  <a href="./4-5_basic_markdown_practicals_hints.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Markdown: Hints</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4-6_basic_markdown_practicals_solution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solution Rmarkdown</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4-7_shiny.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Shiny</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/4-6_shiny_practicals_questions.html" class="sidebar-item-text sidebar-link">
+  <a href="./4-8_shiny_practicals_questions.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Shiny: Questions</span></a>
   </div>
 </li>
@@ -462,7 +485,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="/4-7_looseends.html" class="sidebar-item-text sidebar-link">
+            <a href="./4-9_looseends.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Loose ends</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -471,7 +494,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/4-8_tidyverse.html" class="sidebar-item-text sidebar-link">
+  <a href="./4-10_tidyverse.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tidyverse</span></a>
   </div>
 </li>
@@ -480,15 +503,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" ></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <div id="quarto-toc-target"></div>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./2-1_Datacleaning.html">Data Cleaning</a></li><li class="breadcrumb-item"><a href="./2-3_Datacleaning_answers.html">Data Cleaning - Answers</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Data Cleaning - Answers</h1>
 </div>
@@ -510,7 +533,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class='callout-icon'></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Warning
@@ -520,8 +543,8 @@ Warning
 <p>Make sure that you try the exercises yourself first before looking at the answers</p>
 </div>
 </div>
-<div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Question 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Answer 1</a></li></ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Question 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Answer 1</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>What functions are useful for the first exploration of the data? How many observations and variables are in the data set? What type of variables are there?</p>
@@ -529,21 +552,21 @@ Warning
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>with <code>dim()</code> and <code>str()</code> we can find out the dimensions of the data and the type of variables. The function <code>head()</code> can be used to view the first couple of observations.</p>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(R_data)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(R_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 190  20</code></pre>
 </div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(R_data)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(R_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&#39;data.frame&#39;:   190 obs. of  20 variables:
+<pre><code>'data.frame':   190 obs. of  20 variables:
  $ patientnumber         : int  1 2 3 4 5 6 7 8 9 10 ...
- $ Stauts                : chr  &quot;intellectual disability&quot; &quot;normal brain development&quot; &quot;intellectual disability&quot; &quot;normal brain development&quot; ...
- $ iodine_deficiency     : chr  &quot;no&quot; &quot;no&quot; &quot;no&quot; &quot;yes&quot; ...
+ $ Stauts                : chr  "intellectual disability" "normal brain development" "intellectual disability" "normal brain development" ...
+ $ iodine_deficiency     : chr  "no" "no" "no" "yes" ...
  $ BMI                   : int  32 23 29 22 22 24 24 28 33 32 ...
- $ educational_level     : chr  &quot;intermediate&quot; &quot;intermediate&quot; &quot;low&quot; &quot;low&quot; ...
- $ alcohol               : chr  &quot;no&quot; &quot;yes&quot; &quot;no&quot; &quot;no&quot; ...
- $ smoking               : chr  &quot;no&quot; &quot;yes&quot; &quot;no&quot; &quot;no&quot; ...
- $ medication            : chr  &quot;no&quot; &quot;no&quot; &quot;no&quot; &quot;no&quot; ...
+ $ educational_level     : chr  "intermediate" "intermediate" "low" "low" ...
+ $ alcohol               : chr  "no" "yes" "no" "no" ...
+ $ smoking               : chr  "no" "yes" "no" "no" ...
+ $ medication            : chr  "no" "no" "no" "no" ...
  $ birthweight           : int  2618 3541 2619 3810 4136 4030 3377 2500 4255 2952 ...
  $ pregnancy_length_weeks: int  38 40 38 40 42 41 40 37 42 39 ...
  $ pregnancy_length_days : int  4 2 3 5 3 1 4 1 0 2 ...
@@ -562,7 +585,7 @@ Warning
 </div>
 </div>
 </div>
-<div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Question 2</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Answer 2</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
@@ -570,22 +593,22 @@ Warning
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(R_data)[<span class="fu">names</span>(R_data) <span class="sc">==</span> <span class="st">&quot;Stauts&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Status&quot;</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(R_data)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(R_data)[<span class="fu">names</span>(R_data) <span class="sc">==</span> <span class="st">"Stauts"</span>] <span class="ot">&lt;-</span> <span class="st">"Status"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(R_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] &quot;patientnumber&quot;          &quot;Status&quot;                 &quot;iodine_deficiency&quot;     
- [4] &quot;BMI&quot;                    &quot;educational_level&quot;      &quot;alcohol&quot;               
- [7] &quot;smoking&quot;                &quot;medication&quot;             &quot;birthweight&quot;           
-[10] &quot;pregnancy_length_weeks&quot; &quot;pregnancy_length_days&quot;  &quot;SAM&quot;                   
-[13] &quot;SAH&quot;                    &quot;homocysteine&quot;           &quot;cholesterol&quot;           
-[16] &quot;HDL&quot;                    &quot;triglycerides&quot;          &quot;vitaminB12&quot;            
-[19] &quot;folicacid_serum&quot;        &quot;folicacid_erys&quot;        </code></pre>
+<pre><code> [1] "patientnumber"          "Status"                 "iodine_deficiency"     
+ [4] "BMI"                    "educational_level"      "alcohol"               
+ [7] "smoking"                "medication"             "birthweight"           
+[10] "pregnancy_length_weeks" "pregnancy_length_days"  "SAM"                   
+[13] "SAH"                    "homocysteine"           "cholesterol"           
+[16] "HDL"                    "triglycerides"          "vitaminB12"            
+[19] "folicacid_serum"        "folicacid_erys"        </code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Question 3</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Answer 3</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
@@ -594,8 +617,8 @@ Warning
 </div>
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>R_data<span class="sc">$</span>folicacid_erys_round <span class="ot">&lt;-</span> <span class="fu">round</span>(R_data<span class="sc">$</span>folicacid_erys, <span class="at">digits =</span> <span class="dv">2</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>R_data[<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>, <span class="st">&quot;folicacid_erys_round&quot;</span>]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>R_data<span class="sc">$</span>folicacid_erys_round <span class="ot">&lt;-</span> <span class="fu">round</span>(R_data<span class="sc">$</span>folicacid_erys, <span class="at">digits =</span> <span class="dv">2</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>R_data[<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>, <span class="st">"folicacid_erys_round"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 1132.00 1467.18 1527.81 1539.13 1177.54 1175.00 1396.00 1341.20 1228.52
 [10] 1327.22 1110.88 1289.36 1333.85 1329.62 1207.11 1340.00 1173.00 1653.00
@@ -605,7 +628,7 @@ Warning
 </div>
 </div>
 </div>
-<div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Question 4</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Answer 4</a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
@@ -614,8 +637,8 @@ Warning
 </div>
 <div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>R_data<span class="sc">$</span>birthweight_kg <span class="ot">&lt;-</span> <span class="fu">round</span>(R_data<span class="sc">$</span>birthweight<span class="sc">/</span><span class="dv">1000</span>, <span class="at">digits =</span> <span class="dv">1</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>R_data<span class="sc">$</span>birthweight_kg[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>R_data<span class="sc">$</span>birthweight_kg <span class="ot">&lt;-</span> <span class="fu">round</span>(R_data<span class="sc">$</span>birthweight<span class="sc">/</span><span class="dv">1000</span>, <span class="at">digits =</span> <span class="dv">1</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>R_data<span class="sc">$</span>birthweight_kg[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 2.6 3.5 2.6 3.8 4.1 4.0 3.4 2.5 4.3 3.0</code></pre>
 </div>
@@ -623,7 +646,7 @@ Warning
 </div>
 </div>
 </div>
-<div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true">Question 5</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false">Answer 5</a></li></ul>
 <div class="tab-content">
 <div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
@@ -632,8 +655,8 @@ Warning
 </div>
 <div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>R_data<span class="sc">$</span>total_preg_days <span class="ot">&lt;-</span> R_data<span class="sc">$</span>pregnancy_length_weeks<span class="sc">*</span><span class="dv">7</span> <span class="sc">+</span> R_data<span class="sc">$</span>pregnancy_length_days</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(R_data<span class="sc">$</span>total_preg_days, <span class="dv">12</span>)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>R_data<span class="sc">$</span>total_preg_days <span class="ot">&lt;-</span> R_data<span class="sc">$</span>pregnancy_length_weeks<span class="sc">*</span><span class="dv">7</span> <span class="sc">+</span> R_data<span class="sc">$</span>pregnancy_length_days</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(R_data<span class="sc">$</span>total_preg_days, <span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 270 282 269 285 297 288 284 260 294 275 263 249</code></pre>
 </div>
@@ -641,7 +664,7 @@ Warning
 </div>
 </div>
 </div>
-<div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true">Question 6</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-3" role="tab" aria-controls="tabset-6-3" aria-selected="false">Answer 6</a></li></ul>
 <div class="tab-content">
 <div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
@@ -652,16 +675,16 @@ Warning
 </div>
 <div id="tabset-6-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-3-tab">
 <div class="cell">
-<div class="sourceCode" id="cb13"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>R_data<span class="sc">$</span>BMI_cat <span class="ot">&lt;-</span> <span class="fu">cut</span>(R_data<span class="sc">$</span>BMI, <span class="at">breaks=</span><span class="fu">c</span>(<span class="sc">-</span><span class="cn">Inf</span>, <span class="fl">18.5</span>, <span class="fl">24.9</span>, <span class="fl">29.9</span>, <span class="cn">Inf</span>),</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Underweight&quot;</span>, <span class="st">&quot;Healthy weight&quot;</span>, <span class="st">&quot;Overweight&quot;</span>, <span class="st">&quot;Obesity&quot;</span>))</span>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>R_data<span class="sc">$</span>BMI_cat <span class="ot">&lt;-</span> <span class="fu">cut</span>(R_data<span class="sc">$</span>BMI, <span class="at">breaks=</span><span class="fu">c</span>(<span class="sc">-</span><span class="cn">Inf</span>, <span class="fl">18.5</span>, <span class="fl">24.9</span>, <span class="fl">29.9</span>, <span class="cn">Inf</span>),</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">labels=</span><span class="fu">c</span>(<span class="st">"Underweight"</span>, <span class="st">"Healthy weight"</span>, <span class="st">"Overweight"</span>, <span class="st">"Obesity"</span>))</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(R_data<span class="sc">$</span>BMI_cat)</span></code></pre></div>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(R_data<span class="sc">$</span>BMI_cat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
    Underweight Healthy weight     Overweight        Obesity 
              1            104             76              9 </code></pre>
 </div>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(R_data<span class="sc">$</span>BMI_cat))</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(R_data<span class="sc">$</span>BMI_cat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
    Underweight Healthy weight     Overweight        Obesity 
@@ -671,7 +694,7 @@ Warning
 </div>
 </div>
 </div>
-<div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-7-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-1" role="tab" aria-controls="tabset-7-1" aria-selected="true">Question 7</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-2" role="tab" aria-controls="tabset-7-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-7-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-7-3" role="tab" aria-controls="tabset-7-3" aria-selected="false">Answer 7</a></li></ul>
 <div class="tab-content">
 <div id="tabset-7-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-7-1-tab">
@@ -684,16 +707,16 @@ Warning
 <div id="tabset-7-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-7-3-tab">
 <p>Other solutions might be possible!</p>
 <div class="cell">
-<div class="sourceCode" id="cb17"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>R_data2 <span class="ot">&lt;-</span> R_data[R_data<span class="sc">$</span>BMI_cat <span class="sc">==</span> <span class="st">&quot;Healthy weight&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;patientnumber&quot;</span>,<span class="st">&quot;Status&quot;</span>, <span class="st">&quot;birthweight&quot;</span>)]</span>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>R_data2 <span class="ot">&lt;-</span> R_data[R_data<span class="sc">$</span>BMI_cat <span class="sc">==</span> <span class="st">"Healthy weight"</span>, <span class="fu">c</span>(<span class="st">"patientnumber"</span>,<span class="st">"Status"</span>, <span class="st">"birthweight"</span>)]</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(R_data2)</span></code></pre></div>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(R_data2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&#39;data.frame&#39;:   104 obs. of  3 variables:
+<pre><code>'data.frame':   104 obs. of  3 variables:
  $ patientnumber: int  2 4 5 6 7 14 16 19 20 21 ...
- $ Status       : chr  &quot;normal brain development&quot; &quot;normal brain development&quot; &quot;intellectual disability&quot; &quot;intellectual disability&quot; ...
+ $ Status       : chr  "normal brain development" "normal brain development" "intellectual disability" "intellectual disability" ...
  $ birthweight  : int  3541 3810 4136 4030 3377 2828 2959 3383 2500 2720 ...</code></pre>
 </div>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(R_data2)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(R_data2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 104   3</code></pre>
 </div>
@@ -701,7 +724,7 @@ Warning
 </div>
 </div>
 </div>
-<div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-8-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-1" role="tab" aria-controls="tabset-8-1" aria-selected="true">Question 8</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-2" role="tab" aria-controls="tabset-8-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-8-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-8-3" role="tab" aria-controls="tabset-8-3" aria-selected="false">Answer 8</a></li></ul>
 <div class="tab-content">
 <div id="tabset-8-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-8-1-tab">
@@ -713,18 +736,18 @@ Warning
 </div>
 <div id="tabset-8-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-8-3-tab">
 <div class="cell">
-<div class="sourceCode" id="cb21"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>R_data3 <span class="ot">&lt;-</span> R_data[, <span class="fu">c</span>(<span class="st">&quot;patientnumber&quot;</span>,<span class="st">&quot;Status&quot;</span>, <span class="st">&quot;BMI&quot;</span>)]</span>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>R_data3 <span class="ot">&lt;-</span> R_data[, <span class="fu">c</span>(<span class="st">"patientnumber"</span>,<span class="st">"Status"</span>, <span class="st">"BMI"</span>)]</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>data_inner <span class="ot">&lt;-</span> <span class="fu">merge</span>(R_data2, R_data3, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;patientnumber&quot;</span>, <span class="st">&quot;Status&quot;</span>))</span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>data_right <span class="ot">&lt;-</span> <span class="fu">merge</span>(R_data2, R_data3, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;patientnumber&quot;</span>, <span class="st">&quot;Status&quot;</span>), <span class="at">all.y =</span> T)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>data_inner <span class="ot">&lt;-</span> <span class="fu">merge</span>(R_data2, R_data3, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"patientnumber"</span>, <span class="st">"Status"</span>))</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>data_right <span class="ot">&lt;-</span> <span class="fu">merge</span>(R_data2, R_data3, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"patientnumber"</span>, <span class="st">"Status"</span>), <span class="at">all.y =</span> T)</span>
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(data_inner)</span></code></pre></div>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(data_inner)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 104   4</code></pre>
 </div>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(data_right)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(data_right)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 190   4</code></pre>
 </div>
@@ -732,7 +755,7 @@ Warning
 </div>
 </div>
 </div>
-<div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-9-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-1" role="tab" aria-controls="tabset-9-1" aria-selected="true">Question 9</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-9-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-9-2" role="tab" aria-controls="tabset-9-2" aria-selected="false">Answer 9</a></li></ul>
 <div class="tab-content">
 <div id="tabset-9-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-9-1-tab">
@@ -740,92 +763,92 @@ Warning
 </div>
 <div id="tabset-9-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-9-2-tab">
 <div class="cell">
-<div class="sourceCode" id="cb25"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cholesterol</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(R_data<span class="sc">$</span>cholesterol)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cholesterol</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(R_data<span class="sc">$</span>cholesterol)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure>
-<p><img src="2-3_Datacleaning_answers_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672" /></p>
+<figure class="figure">
+<p><img src="2-3_Datacleaning_answers_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(R_data<span class="sc">$</span>cholesterol)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(R_data<span class="sc">$</span>cholesterol)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure>
-<p><img src="2-3_Datacleaning_answers_files/figure-html/unnamed-chunk-10-2.png" class="img-fluid" width="672" /></p>
+<figure class="figure">
+<p><img src="2-3_Datacleaning_answers_files/figure-html/unnamed-chunk-10-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(R_data<span class="sc">$</span>cholesterol)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(R_data<span class="sc">$</span>cholesterol)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure>
-<p><img src="2-3_Datacleaning_answers_files/figure-html/unnamed-chunk-10-3.png" class="img-fluid" width="672" /></p>
+<figure class="figure">
+<p><img src="2-3_Datacleaning_answers_files/figure-html/unnamed-chunk-10-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(R_data<span class="sc">$</span>cholesterol)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(R_data<span class="sc">$</span>cholesterol)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
   15.10   16.30   16.80   16.94   17.50   20.30 </code></pre>
 </div>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># triglycerides</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(R_data<span class="sc">$</span>triglycerides)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># triglycerides</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(R_data<span class="sc">$</span>triglycerides)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure>
-<p><img src="2-3_Datacleaning_answers_files/figure-html/unnamed-chunk-10-4.png" class="img-fluid" width="672" /></p>
+<figure class="figure">
+<p><img src="2-3_Datacleaning_answers_files/figure-html/unnamed-chunk-10-4.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(R_data<span class="sc">$</span>triglycerides)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(R_data<span class="sc">$</span>triglycerides)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure>
-<p><img src="2-3_Datacleaning_answers_files/figure-html/unnamed-chunk-10-5.png" class="img-fluid" width="672" /></p>
+<figure class="figure">
+<p><img src="2-3_Datacleaning_answers_files/figure-html/unnamed-chunk-10-5.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(R_data<span class="sc">$</span>triglycerides)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(R_data<span class="sc">$</span>triglycerides)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure>
-<p><img src="2-3_Datacleaning_answers_files/figure-html/unnamed-chunk-10-6.png" class="img-fluid" width="672" /></p>
+<figure class="figure">
+<p><img src="2-3_Datacleaning_answers_files/figure-html/unnamed-chunk-10-6.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(R_data<span class="sc">$</span>triglycerides)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(R_data<span class="sc">$</span>triglycerides)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
   7.350   7.710   7.925   8.068   8.270  10.300 </code></pre>
 </div>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># vitaminB12</span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(R_data<span class="sc">$</span>vitaminB12)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># vitaminB12</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(R_data<span class="sc">$</span>vitaminB12)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure>
-<p><img src="2-3_Datacleaning_answers_files/figure-html/unnamed-chunk-10-7.png" class="img-fluid" width="672" /></p>
+<figure class="figure">
+<p><img src="2-3_Datacleaning_answers_files/figure-html/unnamed-chunk-10-7.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(R_data<span class="sc">$</span>vitaminB12)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(R_data<span class="sc">$</span>vitaminB12)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure>
-<p><img src="2-3_Datacleaning_answers_files/figure-html/unnamed-chunk-10-8.png" class="img-fluid" width="672" /></p>
+<figure class="figure">
+<p><img src="2-3_Datacleaning_answers_files/figure-html/unnamed-chunk-10-8.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(R_data<span class="sc">$</span>vitaminB12)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(R_data<span class="sc">$</span>vitaminB12)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
-<figure>
-<p><img src="2-3_Datacleaning_answers_files/figure-html/unnamed-chunk-10-9.png" class="img-fluid" width="672" /></p>
+<figure class="figure">
+<p><img src="2-3_Datacleaning_answers_files/figure-html/unnamed-chunk-10-9.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(R_data<span class="sc">$</span>vitaminB12)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(R_data<span class="sc">$</span>vitaminB12)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
   201.0   307.0   370.5   409.7   463.0  3360.0 </code></pre>
@@ -835,7 +858,7 @@ Warning
 </div>
 </div>
 </div>
-<div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-10-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-1" role="tab" aria-controls="tabset-10-1" aria-selected="true">Question 10</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-10-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-10-2" role="tab" aria-controls="tabset-10-2" aria-selected="false">Answer 10</a></li></ul>
 <div class="tab-content">
 <div id="tabset-10-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-10-1-tab">
@@ -844,18 +867,18 @@ Warning
 <div id="tabset-10-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-10-2-tab">
 <p>Knowing that the value of <code>3360</code> is an impossible value for vitamin B12, we can decide to remove this measurement. We can either put this measurement to missing (NA)</p>
 <div class="cell">
-<div class="sourceCode" id="cb40"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>R_data<span class="sc">$</span>vitaminB12_cor <span class="ot">&lt;-</span> R_data<span class="sc">$</span>vitaminB12</span>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>R_data<span class="sc">$</span>vitaminB12_cor <span class="ot">&lt;-</span> R_data<span class="sc">$</span>vitaminB12</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>R_data<span class="sc">$</span>vitaminB12_cor[R_data<span class="sc">$</span>vitaminB12_cor  <span class="sc">==</span> <span class="dv">3360</span>] <span class="ot">&lt;-</span> <span class="cn">NA</span> </span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(R_data<span class="sc">$</span>vitaminB12_cor)</span></code></pre></div>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(R_data<span class="sc">$</span>vitaminB12_cor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
   201.0   307.0   370.0   394.1   463.0   766.0       1 </code></pre>
 </div>
 </div>
 <p>or we can remove the whole patient</p>
 <div class="cell">
-<div class="sourceCode" id="cb42"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>R_data_cor <span class="ot">&lt;-</span> R_data[R_data<span class="sc">$</span>vitaminB12 <span class="sc">!=</span> <span class="dv">3360</span>,]</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(R_data_cor)</span></code></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>R_data_cor <span class="ot">&lt;-</span> R_data[R_data<span class="sc">$</span>vitaminB12 <span class="sc">!=</span> <span class="dv">3360</span>,]</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(R_data_cor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 189  25</code></pre>
 </div>
@@ -863,17 +886,17 @@ Warning
 </div>
 </div>
 </div>
-<div class="panel-tabset">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-11-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-1" role="tab" aria-controls="tabset-11-1" aria-selected="true">Question 11</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-11-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-2" role="tab" aria-controls="tabset-11-2" aria-selected="false">Hint</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-11-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-11-3" role="tab" aria-controls="tabset-11-3" aria-selected="false">Answer 11</a></li></ul>
 <div class="tab-content">
 <div id="tabset-11-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-11-1-tab">
 <p>Fill in the table with summary statistics below</p>
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
-<col style="width: 27%" />
-<col style="width: 24%" />
-<col style="width: 24%" />
-<col style="width: 24%" />
+<col style="width: 27%">
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 24%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -989,10 +1012,10 @@ Warning
 </div>
 <div id="tabset-11-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-11-3-tab">
 <div class="cell">
-<div class="sourceCode" id="cb44"><pre class="sourceCode r cell-code"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(R_data<span class="sc">$</span>Status)</span>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(R_data<span class="sc">$</span>Status)</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(BMI <span class="sc">~</span> Status, <span class="at">data =</span> R_data, summary)</span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>R_data<span class="sc">$</span>educational_level <span class="ot">&lt;-</span> <span class="fu">factor</span>(R_data<span class="sc">$</span>educational_level, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&#39;low&#39;</span>, <span class="st">&#39;intermediate&#39;</span>, <span class="st">&#39;high&#39;</span>))</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>R_data<span class="sc">$</span>educational_level <span class="ot">&lt;-</span> <span class="fu">factor</span>(R_data<span class="sc">$</span>educational_level, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">'low'</span>, <span class="st">'intermediate'</span>, <span class="st">'high'</span>))</span>
 <span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="fu">with</span>(R_data, <span class="fu">table</span>(educational_level, Status))</span>
 <span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">with</span>(R_data, <span class="fu">table</span>(educational_level, Status)),<span class="dv">2</span>)</span>
 <span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a></span>
@@ -1004,14 +1027,14 @@ Warning
 <span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(SAH <span class="sc">~</span> Status, <span class="at">data =</span> R_data, summary)</span>
 <span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-16"><a href="#cb44-16" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(vitaminB12_cor <span class="sc">~</span> Status, <span class="at">data =</span> R_data, summary)</span></code></pre></div>
+<span id="cb44-16"><a href="#cb44-16" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(vitaminB12_cor <span class="sc">~</span> Status, <span class="at">data =</span> R_data, summary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<table class="caption-top">
+<table class="caption-top table">
 <colgroup>
-<col style="width: 27%" />
-<col style="width: 24%" />
-<col style="width: 24%" />
-<col style="width: 24%" />
+<col style="width: 27%">
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 24%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1123,15 +1146,11 @@ Warning
 </div>
 </div>
 </div>
-<div id="quarto-navigation-envelope" class="hidden">
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar-title">Basic R Course</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-navbar-title">Basic R Course</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-next">Analysis</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-prev">Data Cleaning - Practical</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/index.htmlWelcome">Welcome</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:quarto-sidebar-section-1">Introduction and History</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/1-2_Working_with_R.html&lt;span-class=&#39;chapter-number&#39;&gt;1&lt;/span&gt;--&lt;span-class=&#39;chapter-title&#39;&gt;Importing-and-Saving-Data&lt;/span&gt;"><span class="chapter-number">1</span>  <span class="chapter-title">Importing and Saving Data</span></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/1-3_Working_with_R_practical.htmlWorking-with-R---Practical">Working with R - Practical</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/1-4_Working_with_R_answers.htmlWorking-with-R---Answers">Working with R - Answers</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:quarto-sidebar-section-2">Common Objects</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/1-6_Common_Objects_practical.htmlCommon-Objects---Practical">Common Objects - Practical</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/1-7_Common_Objects_answers.htmlCommon-Objects---Answers">Common Objects - Answers</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:quarto-sidebar-section-3">Indexing and Subsetting</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/1-9_Indexing_Subsetting_practical.htmlIndexing-and-Subsetting---Practical">Indexing and Subsetting - Practical</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/1-10_Indexing_Subsetting_answers.htmlIndexing-and-Subsetting---Answers">Indexing and Subsetting - Answers</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:quarto-sidebar-section-4">Data Cleaning</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/2-2_Datacleaning_practical.htmlData-Cleaning---Practical">Data Cleaning - Practical</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/2-3_Datacleaning_answers.htmlData-Cleaning---Answers">Data Cleaning - Answers</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:quarto-sidebar-section-5">Analysis</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/2-5_Analysis_practical.htmlAnalysis---Practical">Analysis - Practical</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/2-6_Analysis_answers.htmlAnalysis---Answers">Analysis - Answers</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:quarto-sidebar-section-6">Basic plotting</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/2-8_basic_plotting.htmlBasic-plotting">Basic plotting</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:quarto-sidebar-section-7">Basic Plotting: Practicals</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/2-10_basic_plotting_practicals_questions.htmlBasic-Plotting:-Questions">Basic Plotting: Questions</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/2-11_basic_plotting_practicals_answers.htmlBasic-Plotting:-Answers">Basic Plotting: Answers</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:quarto-sidebar-section-8">ggplot2</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/2-13_ggplot2.htmlData-visualization-using-ggplot2">Data visualization using ggplot2</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:quarto-sidebar-section-9">ggplot2: Practicals</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/2-15_ggplot2_practicals_questions.htmlggplot:-Questions">ggplot: Questions</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/2-16_ggplot2_practicals_answers.htmlggplot:-Answers">ggplot: Answers</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:quarto-sidebar-section-10">Functions</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/3-2_functions_examples.htmlExample-functions">Example functions</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/3-3_functions_arguments.htmlFunction-arguments">Function arguments</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/3-4_functions_custom.htmlCreating-your-own-functions">Creating your own functions</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/3-5_functions_conditional.htmlConditional-execution-using-if-and-else">Conditional execution using if and else</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/3-6_functions_terminating.htmlTerminating-a-function-with-returns,-errors,-and-warnings">Terminating a function with returns, errors, and warnings</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/3-7_functions_looping.htmlLooping">Looping</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/3-8_functions_apply.htmlUsing-apply-functions">Using apply functions</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:quarto-sidebar-section-11">Functions: Practicals</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/3-10_functions_practicals_questions.htmlFunctions:-Questions">Functions: Questions</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/3-11_functions_practicals_answers.htmlFunctions:-Answers">Functions: Answers</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:quarto-sidebar-section-12">Reproducible research</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/4-2_basic_markdown.htmlBasic-Markdown">Basic Markdown</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/4-3_codeblocks.htmlCode-Blocks">Code Blocks</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/4-4_basic_markdown_practicals_questions.htmlMarkdown:-Questions">Markdown: Questions</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/4-5_shiny.htmlShiny">Shiny</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/4-6_shiny_practicals_questions.htmlShiny:-Questions">Shiny: Questions</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:quarto-sidebar-section-13">Loose ends</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-int-sidebar:/4-8_tidyverse.htmlTidyverse">Tidyverse</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-breadcrumbs-Data-Cleaning">Data Cleaning</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-breadcrumbs-Data-Cleaning---Answers">Data Cleaning - Answers</span></p>
-</div>
-<div id="quarto-meta-markdown" class="hidden">
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-metatitle">Data Cleaning - Answers – Basic R Course</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-twittercardtitle">Data Cleaning - Answers – Basic R Course</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-ogcardtitle">Data Cleaning - Answers – Basic R Course</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-metasitename">Basic R Course</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-twittercarddesc"></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="quarto-ogcardddesc"></span></p>
-</div>
+
+
 
 </main> <!-- /main -->
-<script id = "quarto-html-after-body" type="application/javascript">
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1697,18 +1716,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a  href="/2-2_Datacleaning_practical.html" class="pagination-link" aria-label="Data Cleaning - Practical">
+      <a href="./2-2_Datacleaning_practical.html" class="pagination-link" aria-label="Data Cleaning - Practical">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data Cleaning - Practical</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a  href="/2-4_Analysis.html" class="pagination-link" aria-label="Analysis">
+      <a href="./2-4_Analysis.html" class="pagination-link" aria-label="Analysis">
         <span class="nav-page-text">Analysis</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
 
-</body>
 
-</html>
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/dnieuw/BasicRcourseEMC/edit/main/2-3_Datacleaning_answers.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div></div></footer></body></html>
